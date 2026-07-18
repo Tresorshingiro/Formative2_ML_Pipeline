@@ -59,8 +59,8 @@ python --version      # should print Python 3.11.x
 
 ```bash
 # 1. clone the repository
-git clone <the-repo-url>
-cd Formative2_Machine-Learning_Pipeline
+git clone https://github.com/Tresorshingiro/Formative2_ML_Pipeline.git
+cd Formative2_ML_Pipeline
 
 # 2. create and activate a virtual environment
 python -m venv .venv
