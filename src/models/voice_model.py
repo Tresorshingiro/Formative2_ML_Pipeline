@@ -2,6 +2,8 @@
 
 This file trains the voice model and predicts which team member a voice belongs to.
 """
+import warnings
+
 import joblib
 import librosa
 import numpy as np
@@ -28,11 +30,13 @@ def predict_audio(audio_path):
     bundle = load()
     model, feature_cols = bundle["model"], bundle["feature_cols"]
 
-    y, sr = librosa.load(str(audio_path), sr=config.SAMPLE_RATE, mono=True)
-    if len(y) < sr * 0.3:
-        raise ValueError(f"Clip too short to verify: {audio_path}")
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        y, sr = librosa.load(str(audio_path), sr=config.SAMPLE_RATE, mono=True)
+        if len(y) < sr * 0.3:
+            raise ValueError(f"Clip too short to verify: {audio_path}")
 
-    feats = extract_features(y, sr)
+        feats = extract_features(y, sr)
     x = np.array([[feats[c] for c in feature_cols]], dtype=np.float64)
 
     proba = model.predict_proba(x)[0]
