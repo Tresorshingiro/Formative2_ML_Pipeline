@@ -35,6 +35,8 @@ The system follows the flow defined in the assignment:
 
 The full written report: https://docs.google.com/document/d/163k1ausPBALIpfOF3yZy8Z52vNjznqUgUn1IhkLawnw/edit?usp=sharing.
 
+The video demo: https://drive.google.com/file/d/1GgkkvE3Mc3q3lCqY9x8eE1sfEA2y284u/view?usp=sharing
+
 The step-by-step notebook is in
 [notebooks/Formative2_Multimodal_Pipeline.ipynb](notebooks/Formative2_Multimodal_Pipeline.ipynb),
 the report figures are in [reports/figures/](reports/figures/), and the live scores are in
